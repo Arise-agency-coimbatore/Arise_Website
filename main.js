@@ -51,3 +51,33 @@ faqItems.forEach(item => {
     item.classList.toggle('active');
   });
 });
+
+// Contact Form Handler
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const business = document.getElementById('business').value;
+    const phone = document.getElementById('phone').value;
+    const req = document.getElementById('req').value;
+    
+    // Construct WhatsApp message
+    const message = `Hello Arise Agency! I would like to request a Free Demo.\n\n*Name:* ${name}\n*Business Type:* ${business}\n*Phone:* ${phone}\n*Requirement:* ${req}`;
+    
+    // WhatsApp number
+    const whatsappNumber = '919025488266';
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open in new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Optional: reset form
+    // contactForm.reset();
+  });
+}
