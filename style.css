@@ -6,6 +6,7 @@
   --color-text: #0F172A;
   --color-accent: #2563EB;
   --color-accent-hover: #1D4ED8;
+  --color-brand-orange: #F59E0B;
   --color-secondary: #E5E7EB;
   --color-white: #FFFFFF;
   --color-dark: #1E293B;
@@ -130,7 +131,29 @@ img {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(135deg, var(--color-accent) 0%, #10B981 100%);
+  background-image: linear-gradient(135deg, var(--color-accent) 0%, var(--color-brand-orange) 100%);
+}
+
+.brand-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-brand-orange);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.logo-watermark {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  opacity: 0.03;
+  width: 40%;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(-15deg);
 }
 
 .section-title {
@@ -381,8 +404,8 @@ img {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background-color: #eff6ff;
-  color: var(--color-accent);
+  background-color: #fff7ed;
+  color: var(--color-brand-orange);
   display: flex;
   align-items: center;
   justify-content: center;
