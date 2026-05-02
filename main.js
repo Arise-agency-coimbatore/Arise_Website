@@ -1,3 +1,6 @@
+import { inject } from '@vercel/analytics';
+inject();
+
 // Sticky Navbar
 const navbar = document.getElementById('navbar');
 
