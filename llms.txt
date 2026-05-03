@@ -1,0 +1,21 @@
+# Arise Agency
+
+Arise Agency is a premium digital engineering and design agency based in Erode, Tamil Nadu, India. We specialize in high-performance website development, scalable eCommerce systems, and AI-driven automation.
+
+## Core Services
+- Website Development (Fast, SEO-optimized, mobile-first)
+- eCommerce Solutions (Payment integration, WhatsApp automation)
+- Branding & Logo Design (Modern, startup-focused)
+- WhatsApp API Automation & AI Chatbots
+
+## Contact Information
+- Website: https://www.ariseagency.in/
+- Email: arisecoimbatore@gmail.com
+- Phone: +91 90254 88266
+- Location: Erode, Tamil Nadu, India
+
+## Key Differentiators
+- Student-driven agility and modern trend awareness.
+- 1-month free trial for staging environments.
+- Rapid deployment (2-5 days for standard sites).
+- Focus on conversion-driven architecture.
