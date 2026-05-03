@@ -110,7 +110,7 @@
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">
+      <a href="/" class="logo">
         <img src="/logo3.png" alt="Arise Agency Logo" class="logo-light" style="height: 40px; width: auto;" />
         <img src="/logo2.png" alt="Arise Agency Logo" class="logo-dark"
           style="height: 40px; width: auto; display: none;" />
@@ -121,9 +121,26 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a href="#contact" class="btn btn-primary">Get Free Demo</a>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary">Get Free Demo</a>
+      </div>
+      <div class="mobile-menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="/about.html">About Us</a>
+    <a href="#contact" class="btn btn-primary">Get Free Demo</a>
+  </div>
   </header>
 
   <main>
@@ -480,7 +497,7 @@
         <h2 class="section-title">Ready to Outperform?</h2>
         <p class="section-subtitle">Get in touch to start your 1-month free trial in Erode.</p>
       </div>
-      <div class="grid" style="grid-template-columns: 1fr; gap: 4rem; align-items: start;">
+      <div class="grid grid-2" style="gap: 4rem; align-items: start;">
         <div class="reveal reveal-delay-1"
           style="background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); padding: 3rem; border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-xl);">
           <form id="contact-form" style="display: grid; gap: 1.5rem;">
