@@ -4,13 +4,16 @@ inject();
 // Sticky Navbar
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
+const handleScroll = () => {
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-});
+};
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
 
 // Scroll Reveal Animation
 const revealElements = document.querySelectorAll('.reveal');
@@ -27,7 +30,7 @@ const revealCallback = (entries, observer) => {
 const revealOptions = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.15
+  threshold: 0.1
 };
 
 const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
