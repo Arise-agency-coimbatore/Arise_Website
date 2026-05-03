@@ -53,6 +53,24 @@
 </head>
 
 <body>
+
+  <!-- ====== VIDEO LOADING SCREEN ====== -->
+  <div id="video-loader" aria-label="Loading screen" role="dialog">
+    <video
+      id="loader-video"
+      src="/intro.mp4"
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+    ></video>
+    <!-- Fallback gradient shown while video loads or if video missing -->
+    <div id="loader-fallback">
+      <img src="/logo2.png" alt="Arise Agency" class="loader-logo" />
+      <div class="loader-pulse"></div>
+    </div>
+    <button id="loader-skip" onclick="dismissLoader()" aria-label="Skip intro">Skip &rsaquo;</button>
+  </div>
   <header>
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
@@ -502,6 +520,46 @@
 
   <!-- Main Script -->
   <script type="module" src="./main.js"></script>
+
+  <!-- Video Loader Script -->
+  <script>
+    (function () {
+      var loader = document.getElementById('video-loader');
+      var video  = document.getElementById('loader-video');
+      var skip   = document.getElementById('loader-skip');
+      var dismissed = false;
+
+      // Prevent body scroll while loader is active
+      document.body.style.overflow = 'hidden';
+
+      function dismissLoader() {
+        if (dismissed) return;
+        dismissed = true;
+        loader.classList.add('loader-hide');
+        // After fade-out animation, remove the element & restore scroll
+        setTimeout(function () {
+          loader.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 700);
+      }
+
+      // Expose to inline onclick
+      window.dismissLoader = dismissLoader;
+
+      // Auto-dismiss when video ends
+      video.addEventListener('ended', dismissLoader);
+
+      // If video can't load (missing file), show fallback and dismiss after 2.5s
+      video.addEventListener('error', function () {
+        video.style.display = 'none';
+        document.getElementById('loader-fallback').style.opacity = '1';
+        setTimeout(dismissLoader, 2500);
+      });
+
+      // Safety timeout: if video hangs, dismiss after 8s
+      setTimeout(dismissLoader, 8000);
+    })();
+  </script>
 </body>
 
 </html>
